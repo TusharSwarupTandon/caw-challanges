@@ -1,0 +1,1 @@
+#A master repo for all js practice challanges

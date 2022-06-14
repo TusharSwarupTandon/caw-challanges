@@ -82,28 +82,3 @@ const setTimeEditEnabled = () =>
     minuteTextField.disabled = false;
     secondTextField.disabled = false;
 }
-
-//edit time
-const editTime = () =>
-{
-    //check is timer is currently running.
-    if(timerRunning == true)
-    {
-        alert("Stop the timer first to edit the time.");
-    }
-    //if timer is not running check if timer is already in editing state.
-    else if(isEditingTime())
-    {
-        //if entered time is in valid format disable editing
-        //else display alert message
-        if(checkValidTime())
-            setTimeEditDisabled();
-        else 
-            alert("Enter a valid time.");
-    }
-    //it time is not being edited allow it to be edited
-    else
-    {
-        setTimeEditEnabled();
-    }
-}

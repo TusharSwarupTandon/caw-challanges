@@ -144,7 +144,7 @@ const checkValidTime = () =>
 {
     let minutes = getMinuteTextField().value;
     let seconds = getSecondTextField().value;
-    if(minutes <= 59 && minutes >= 0 && seconds <= 59 && seconds >= 0 && !Number.isNaN(minutes) && !Number.isNaN(seconds))
+    if(minutes <= 59 && minutes >= 0 && seconds <= 59 && seconds >= 0 && !Number.isNaN(minutes) && !Number.isNaN(seconds) && minutes.indexOf('.') < 0 && seconds.indexOf('.') < 0)
         return true;
     return false;
 

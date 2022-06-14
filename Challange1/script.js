@@ -1,41 +1,10 @@
 let startButton = document.querySelector(".start");
 let settingsButton = document.querySelector(".settings");
 
-let timerRunning = false;
-let timerDecreasing;
+let timerRunning = false; //flag to check if the timer is currently running
+let timerDecreasing;    //external flag for time decreasing interval id
 
-const getMinuteTextField = () =>
-{
-    let minuteDiv=document.querySelector(".minutes");
-    let minuteTextField=minuteDiv.children[0];
-    return minuteTextField;
-}
-
-const getSecondTextField = () =>
-{
-    let secondDiv=document.querySelector(".seconds");
-    let secondTextField=secondDiv.children[0];
-    return secondTextField;
-}
-
-const getRing = () =>
-{
-    let ring = document.querySelector(".ring");
-    return ring;
-}
-
-const changeRingColorToRed = () =>
-{
-    let ring = getRing();
-    ring.style.stroke = "#900A0A";
-}
-
-const changeRingColorToGreen = () =>
-{
-    let ring = getRing();
-    ring.style.stroke = "#09A65A";
-}
-
+//perform actions when time is up
 const timeUp = () =>
 {
     clearInterval(timerDecreasing);
@@ -45,6 +14,7 @@ const timeUp = () =>
     setTimeout(function() {alert("Time's up.");}, 1);
 }
 
+//function to perform time reduction every second
 const reduceTimer = () =>
 {
     let minuteTextField = getMinuteTextField();
@@ -79,95 +49,8 @@ const reduceTimer = () =>
     }, 1000);
 }
 
-const startTimer = () =>
-{
-    timerRunning = true;
-    changeRingColorToGreen();
-    toggleTimerText();
-    reduceTimer();
-}
-
-const stopTimer = () =>
-{
-    timerRunning = false;
-    clearInterval(timerDecreasing);
-    toggleTimerText();
-}
-
-const toggleTimer = () =>
-{
-    if(isEditingTime())
-    {
-        alert("Finish editing to use the clock.")
-        return;
-    }
-    if(timerRunning)
-    {
-        stopTimer();
-    }
-    else
-    {
-       startTimer();
-    }
-}
-
-const toggleTimerText = () =>
-{
-    startButton.innerHTML = startButton.innerHTML === 'start' ? 'stop' : 'start';
-}
-
-const isEditingTime = () =>
-{
-    let secondTextField = getSecondTextField();
-    if(secondTextField.disabled == false)
-        return true;
-    return false;
-}
-
-const setTimeEditDisabled = () =>
-{
-    let minuteTextField = getMinuteTextField();
-    let secondTextField = getSecondTextField();
-    minuteTextField.disabled = true;
-    secondTextField.disabled = true;
-}
-
-const setTimeEditEnabled = () =>
-{
-    let minuteTextField = getMinuteTextField();
-    let secondTextField = getSecondTextField();
-    minuteTextField.disabled = false;
-    secondTextField.disabled = false;
-}
-
-const checkValidTime = () =>
-{
-    let minutes = getMinuteTextField().value;
-    let seconds = getSecondTextField().value;
-    if(minutes <= 59 && minutes >= 0 && seconds <= 59 && seconds >= 0 && !Number.isNaN(minutes) && !Number.isNaN(seconds) && minutes.indexOf('.') < 0 && seconds.indexOf('.') < 0)
-        return true;
-    return false;
-
-}
-
-const editTime = () =>
-{
-    if(timerRunning == true)
-    {
-        alert("Stop the timer first to edit the time.");
-    }
-    else if(isEditingTime())
-    {
-        if(checkValidTime())
-            setTimeEditDisabled();
-        else 
-            alert("Enter a valid time.");
-    }
-    else
-    {
-        setTimeEditEnabled();
-    }
-}
-
+//perform action when start/ top button is clicked
 startButton.addEventListener('click',toggleTimer);
+
+//perform action when settings button is clicked
 settingsButton.addEventListener('click', editTime);

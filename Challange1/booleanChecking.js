@@ -1,5 +1,8 @@
+import {getMinuteTextField, getSecondTextField} from './getElements.js';
+import {startButton} from './index.js';
+
 //check if time is currently in editing state
-const isEditingTime = () =>
+function isEditingTime()
 {
     //check if seconds text field is currenty is editing state
     //if yes return true
@@ -11,7 +14,7 @@ const isEditingTime = () =>
 }
 
 //check if entered time value is valid
-const checkValidTime = () =>
+function checkValidTime()
 {
     //get minute and seconds value 
     let minutes = getMinuteTextField().value;
@@ -22,3 +25,16 @@ const checkValidTime = () =>
         return true;
     return false;
 }
+
+//Check if timer is running
+function isTimerRunning()
+{
+    //if start button text is stop timer is running
+    //return true
+    //otherwise return false
+    if(startButton.innerHTML === 'stop')
+        return true;
+    return false;
+}
+
+export {isEditingTime, checkValidTime, isTimerRunning};

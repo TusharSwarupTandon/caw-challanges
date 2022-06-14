@@ -1,5 +1,5 @@
 //get aacess to minute text field
-const getMinuteTextField = () =>
+function getMinuteTextField()
 {
     let minuteDiv=document.querySelector(".minutes");
     let minuteTextField=minuteDiv.children[0];
@@ -7,7 +7,7 @@ const getMinuteTextField = () =>
 }
 
 //get access to seconds text field
-const getSecondTextField = () =>
+function getSecondTextField()
 {
     let secondDiv=document.querySelector(".seconds");
     let secondTextField=secondDiv.children[0];
@@ -15,8 +15,10 @@ const getSecondTextField = () =>
 }
 
 //get access to ring
-const getRing = () =>
+function getRing()
 {
     let ring = document.querySelector(".ring");
     return ring;
 }
+
+export {getMinuteTextField, getSecondTextField, getRing};

@@ -1,6 +1,6 @@
 //Input - url of file to be played
 //Output - function
-function playPianoSound(url)
+const playPianoSound = (url) =>
 {
     //returns a function to mount to every key
     return function ()
@@ -11,7 +11,7 @@ function playPianoSound(url)
 
 //Input - index of key
 //Output - url of audio file
-function makeUrl(index)
+const makeUrl = (index) =>
 {
     //default path - ./audio/key-
     //index is the number of audio file
@@ -20,7 +20,7 @@ function makeUrl(index)
 }
 
 //function to assign audio files to each key on click
-function assignAudioFile()
+const assignAudioFile = () =>
 {
     //select all anchor tags
     let anchorTags = document.querySelectorAll('a');

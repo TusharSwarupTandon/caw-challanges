@@ -3,21 +3,21 @@ import {getMinuteTextField, getSecondTextField, getRing} from './getElements.js'
 import {startButton,timerDecreasing, reduceTimer} from './index.js';
 
 //changing ring colour to red when timer runs out.
-function changeRingColorToRed()
+const changeRingColorToRed = () =>
 {
     let ring = getRing();
     ring.style.stroke = "#900A0A";
 }
 
 //changing timer colour to green when timer runs.
-function changeRingColorToGreen()
+const changeRingColorToGreen = () =>
 {
     let ring = getRing();
     ring.style.stroke = "#09A65A";
 }
 
 //starts the timer
-function startTimer()
+const startTimer = () =>
 {
     //set the timer running state to running
     //stop the interval
@@ -28,7 +28,7 @@ function startTimer()
 }
 
 //stop timer
-function stopTimer()
+const stopTimer = () =>
 {
     //set the timer running state to not running
     //stop the interval
@@ -38,7 +38,7 @@ function stopTimer()
 }
 
 //when start or stop button is clicked toggele its state
-function toggleTimer()
+const toggleTimer = () =>
 {
     //if time is currently being edited show alert message
     if(isEditingTime())
@@ -58,7 +58,7 @@ function toggleTimer()
 }
 
 //toggle start/stop button text
-function toggleTimerText()
+const toggleTimerText = () =>
 {
     //check whatever the current start button text
     //is and reverse it
@@ -66,7 +66,7 @@ function toggleTimerText()
 }
 
 //disable time editing
-function setTimeEditDisabled()
+const setTimeEditDisabled = () =>
 {
     //get minute and second field and set there disabled property as true
     let minuteTextField = getMinuteTextField();
@@ -76,7 +76,7 @@ function setTimeEditDisabled()
 }
 
 //enable time editing
-function setTimeEditEnabled()
+const setTimeEditEnabled = () =>
 {
     //get minute and second field and set there disabled property as false
     let minuteTextField = getMinuteTextField();
@@ -86,7 +86,7 @@ function setTimeEditEnabled()
 }
 
 //edit time
-function editTime()
+const editTime = () =>
 {
     //check is timer is currently running.
     if(isTimerRunning())

@@ -7,7 +7,7 @@ let settingsButton = document.querySelector(".settings");
 let timerDecreasing;    //external flag for time decreasing interval id
 
 //perform actions when time is up
-function timeUp()
+const timeUp = () =>
 {
     clearInterval(timerDecreasing);
     changeRingColorToRed();
@@ -15,8 +15,8 @@ function timeUp()
     setTimeout(function() {alert("Time's up.");}, 1);
 }
 
-//function to perform time reduction every second
-function reduceTimer()
+//const to perform time reduction every second
+const reduceTimer = () =>
 {
     let minuteTextField = getMinuteTextField();
     let secondTextField = getSecondTextField();

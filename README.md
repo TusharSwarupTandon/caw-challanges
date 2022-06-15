@@ -8,3 +8,8 @@
 - While timer is runnign reduce the value every second.
 - Change colour of ring to red and show alert on time complete.
 - Allow only integer value between 59 and 0 while editing fields
+
+## Challange 3 - Piano
+- Make a function to create url links.
+- Make a function to link all keys with there respective urls
+- On clicking a key play sound.

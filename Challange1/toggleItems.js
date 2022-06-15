@@ -2,18 +2,21 @@ import {isEditingTime, checkValidTime, isTimerRunning} from './booleanChecking.j
 import {getMinuteTextField, getSecondTextField, getRing} from './getElements.js';
 import {startButton,timerDecreasing, reduceTimer} from './index.js';
 
+const redColor = "#900A0A";
+const greenColor = "#09A65A";
+
 //changing ring colour to red when timer runs out.
 const changeRingColorToRed = () =>
 {
     let ring = getRing();
-    ring.style.stroke = "#900A0A";
+    ring.style.stroke = redColor;
 }
 
 //changing timer colour to green when timer runs.
 const changeRingColorToGreen = () =>
 {
     let ring = getRing();
-    ring.style.stroke = "#09A65A";
+    ring.style.stroke = greenColor;
 }
 
 //starts the timer

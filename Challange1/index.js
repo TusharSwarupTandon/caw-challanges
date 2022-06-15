@@ -15,15 +15,12 @@ const timeUp = () =>
     setTimeout(function() {alert("Time's up.");}, 1);
 }
 
-//const to perform time reduction every second
-const reduceTimer = () =>
+const reduceTimeEachSecond = () =>
 {
     let minuteTextField = getMinuteTextField();
     let secondTextField = getSecondTextField();
-    timerDecreasing = setInterval (function()
-    {
-        let seconds = secondTextField.value;
-        let minutes = minuteTextField.value;
+    let seconds = secondTextField.value;
+    let minutes = minuteTextField.value;
 
         if(seconds == 0)
         {
@@ -46,8 +43,13 @@ const reduceTimer = () =>
         if(seconds >= 0 && seconds <= 9)
             seconds = '0' + seconds%10;
         minuteTextField.value = minutes;
-        secondTextField.value = seconds;       
-    }, 1000);
+        secondTextField.value = seconds;
+} 
+
+//const to perform time reduction every second
+const reduceTimer = () =>
+{
+    timerDecreasing = setInterval (reduceTimeEachSecond, 1000);
 }
 
 

@@ -3,6 +3,7 @@ import {selectRandomKey, keyToBePressed} from './utilities.js'
 //main keyboard
 const keyboard = document.querySelectorAll('button');
 
+//variable to hold which key is currently jiggling
 let currentJigglingKey;
 
 const startKeyJiggle = (key) =>

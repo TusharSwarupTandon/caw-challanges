@@ -6,10 +6,10 @@ const getNumberOfKeys = () =>
     return keyboard.length; //53
 }
 
-//generate random number between 1 and total number of keys
+//generate random number between 0 and total number of keys
 const generateRandomNumber = (numberOfKeys) =>
 {
-    return Math.floor(Math.random() * numberOfKeys-1) + 1;
+    return Math.floor(Math.random() * numberOfKeys);
 }
 
 //select the random key

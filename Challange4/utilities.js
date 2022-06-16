@@ -1,4 +1,4 @@
-import {keyboard} from './index.js'
+import {currentJigglingKey, keyboard} from './index.js'
 
 //get total number of keys in the keyboard
 const getNumberOfKeys = () => 

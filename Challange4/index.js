@@ -3,6 +3,8 @@ import {selectRandomKey, keyToBePressed} from './utilities.js'
 //main keyboard
 const keyboard = document.querySelectorAll('button');
 
+let currentJigglingKey;
+
 const startKeyJiggle = (key) =>
 {
     //set the current jiggling key as the key
@@ -36,4 +38,4 @@ document.onkeyup = (pressedKey) =>
 //start key jiggling
 startKeyJiggle(selectRandomKey());
 
-export {keyboard, startKeyJiggle, stopKeyJiggle, changeJigglingKey}
+export {keyboard, currentJigglingKey, startKeyJiggle, stopKeyJiggle, changeJigglingKey}

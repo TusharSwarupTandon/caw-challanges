@@ -1,5 +1,5 @@
 import { menuItems } from "./menuItems.js";
-import { arrowForIncreaseDecrease, initialisePlateQuantity } from "./index.js";
+import { arrowForIncreaseDecrease, initialisePlateQuantity } from "./utilityFunctions.js";
 import {
   decreaseQuantity,
   increaseQuantity,

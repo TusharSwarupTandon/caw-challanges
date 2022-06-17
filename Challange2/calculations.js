@@ -1,5 +1,5 @@
 import { menuItems } from "./menuItems.js";
-import {addButtons, numberOfThisItemInCart, changeInCartToAddCart, removeItemFromCart, hideEmptyTag, displayEmptyTag} from "./index.js"
+import {addButtons, getNumberOfThisItemInCart, changeInCartToAddCart, removeItemFromCart, hideEmptyTag, displayEmptyTag} from "./utilityFunctions.js"
 
 const roundToTwoDecimalPlaces = (number) => {
   return Math.round((number + Number.EPSILON) * 100) / 100;
@@ -7,17 +7,17 @@ const roundToTwoDecimalPlaces = (number) => {
 
 const decreaseQuantity = (button, index) => {
   --menuItems[index].count;
-  if (!numberOfThisItemInCart(index)) {
+  if (!getNumberOfThisItemInCart(index)) {
     removeItemFromCart(button);
     changeInCartToAddCart(addButtons[index]);
   }
 
-  let li = button.parentNode.parentNode;
-  let plateQuantity = li.querySelector(".plate").querySelector(".quantity");
-  let qualityWrapperQuantity = li
+  let listItem = button.parentNode.parentNode;
+  let plateQuantity = listItem.querySelector(".plate").querySelector(".quantity");
+  let qualityWrapperQuantity = listItem
     .querySelector(".quantity__wrapper")
     .querySelector(".quantity");
-  let subtotal = li.querySelector(".subtotal");
+  let subtotal = listItem.querySelector(".subtotal");
 
   plateQuantity.innerHTML = menuItems[index].count;
   qualityWrapperQuantity.innerHTML = menuItems[index].count;
@@ -27,14 +27,14 @@ const decreaseQuantity = (button, index) => {
 };
 
 const increaseQuantity = (button, index) => {
-  if (numberOfThisItemInCart(index) == 0) return ++menuItems[index].count;
+  if (getNumberOfThisItemInCart(index) == 0) return ++menuItems[index].count;
   ++menuItems[index].count;
-  let li = button.parentNode.parentNode;
-  let plateQuantity = li.querySelector(".plate").querySelector(".quantity");
-  let qualityWrapperQuantity = li
+  let listItem = button.parentNode.parentNode;
+  let plateQuantity = listItem.querySelector(".plate").querySelector(".quantity");
+  let qualityWrapperQuantity = listItem
     .querySelector(".quantity__wrapper")
     .querySelector(".quantity");
-  let subtotal = li.querySelector(".subtotal");
+  let subtotal = listItem.querySelector(".subtotal");
 
   plateQuantity.innerHTML = menuItems[index].count;
   qualityWrapperQuantity.innerHTML = menuItems[index].count;
@@ -57,13 +57,17 @@ const updateTotals = () => {
   let totalDiv = totalsParentDiv.querySelectorAll(".total")[1];
 
   let subtotal = 0.0;
+
   for (let i = 0; i < menuItems.length; i++) {
+
     if (menuItems[i].count > 0) {
       subtotal +=
         roundToTwoDecimalPlaces(menuItems[i].price / 100) * menuItems[i].count;
       subtotal = roundToTwoDecimalPlaces(subtotal);
     }
+    
   }
+
   let tax = roundToTwoDecimalPlaces(subtotal * 0.095);
   let total = roundToTwoDecimalPlaces(subtotal + tax);
 

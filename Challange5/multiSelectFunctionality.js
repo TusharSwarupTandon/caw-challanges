@@ -17,7 +17,6 @@ const checkMultipleEpisodes = (previouslySelectedCheckbox, currentSelectedCheckB
 }
 
 export const updateLastSelectedEpisode = (event) => {
-    console.log(event.shiftKey);
     if(lastSelectedEpisode && event.shiftKey){
         checkMultipleEpisodes(lastSelectedEpisode, event.target);
     }

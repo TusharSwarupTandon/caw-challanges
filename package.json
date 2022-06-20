@@ -1,0 +1,42 @@
+{
+  "name": "caw-challanges",
+  "version": "1.0.0",
+  "description": "[Link to challanges](https://tusharswaruptandon.github.io/caw-challanges/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install client/.husky",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TusharSwarupTandon/caw-challanges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TusharSwarupTandon/caw-challanges/issues"
+  },
+  "homepage": "https://github.com/TusharSwarupTandon/caw-challanges#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged ng lint ng test && lint-staged",
+      "pre-push": "ng build --aot true"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

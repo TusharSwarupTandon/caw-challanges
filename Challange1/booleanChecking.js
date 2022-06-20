@@ -1,5 +1,5 @@
-import { getMinuteTextField, getSecondTextField } from './getElements.js';
-import { startButton } from './index.js';
+import {getMinuteTextField, getSecondTextField} from './getElements.js';
+import {startButton} from './index.js';
 
 // check if the input is an integer
 const isInteger = (number) => {
@@ -54,4 +54,4 @@ const isTimerRunning = () => {
     return false;
 };
 
-export { isEditingTime, checkValidTime, isTimerRunning };
+export {isEditingTime, checkValidTime, isTimerRunning};

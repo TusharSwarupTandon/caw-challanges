@@ -1,44 +1,44 @@
-import { updateLastSelectedEpisode } from "./multiSelectFunctionality.js";
+import {updateLastSelectedEpisode} from './multiSelectFunctionality.js';
 
 const createEpisodeLabelName = (episodeId) => {
-	return "episode-" + episodeId;
+    return 'episode-' + episodeId;
 };
 
 const createEpisodeLabel = (episodeLabelNameForUi) => {
-	let labelItem = document.createElement("label");
-	labelItem.setAttribute("for", episodeLabelNameForUi);
-	return labelItem;
+    const labelItem = document.createElement('label');
+    labelItem.setAttribute('for', episodeLabelNameForUi);
+    return labelItem;
 };
 
 const createEpisodeCheckbox = (episodeLabelNameForUi) => {
-	let episodeCheckBox = document.createElement("input");
-	episodeCheckBox.setAttribute("type", "checkbox");
-	episodeCheckBox.setAttribute("name", episodeLabelNameForUi);
-	episodeCheckBox.setAttribute("id", episodeLabelNameForUi);
+    const episodeCheckBox = document.createElement('input');
+    episodeCheckBox.setAttribute('type', 'checkbox');
+    episodeCheckBox.setAttribute('name', episodeLabelNameForUi);
+    episodeCheckBox.setAttribute('id', episodeLabelNameForUi);
 
-	episodeCheckBox.addEventListener("click", updateLastSelectedEpisode);
-	return episodeCheckBox;
+    episodeCheckBox.addEventListener('click', updateLastSelectedEpisode);
+    return episodeCheckBox;
 };
 
 const createEpisodeSpanItem = (episodeName, episodeId) => {
-	let spanItem = document.createElement("span");
-	spanItem.innerHTML = episodeId + " || " + episodeName;
-	return spanItem;
+    const spanItem = document.createElement('span');
+    spanItem.innerHTML = episodeId + ' || ' + episodeName;
+    return spanItem;
 };
 
 export const createEpisodeListItem = (episode) => {
-	const episodeName = episode.name,
-		episodeId = episode.id;
-	let listItem = document.createElement("li");
-	let episodeLabelNameForUi = createEpisodeLabelName(episodeId);
+    const episodeName = episode.name;
+    const episodeId = episode.id;
+    const listItem = document.createElement('li');
+    const episodeLabelNameForUi = createEpisodeLabelName(episodeId);
 
-	let labelItem = createEpisodeLabel(episodeLabelNameForUi);
-	let inputItem = createEpisodeCheckbox(episodeLabelNameForUi);
-	let spanItem = createEpisodeSpanItem(episodeName, episodeId);
+    const labelItem = createEpisodeLabel(episodeLabelNameForUi);
+    const inputItem = createEpisodeCheckbox(episodeLabelNameForUi);
+    const spanItem = createEpisodeSpanItem(episodeName, episodeId);
 
-	labelItem.appendChild(inputItem);
-	labelItem.appendChild(spanItem);
-	listItem.appendChild(labelItem);
+    labelItem.appendChild(inputItem);
+    labelItem.appendChild(spanItem);
+    listItem.appendChild(labelItem);
 
-	return listItem;
+    return listItem;
 };

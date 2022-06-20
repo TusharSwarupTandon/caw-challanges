@@ -1,0 +1,23 @@
+{
+  "name": "caw-challanges",
+  "version": "1.0.0",
+  "description": "[Link to challanges](https://tusharswaruptandon.github.io/caw-challanges/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TusharSwarupTandon/caw-challanges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TusharSwarupTandon/caw-challanges/issues"
+  },
+  "homepage": "https://github.com/TusharSwarupTandon/caw-challanges#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

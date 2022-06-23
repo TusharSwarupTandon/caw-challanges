@@ -39,6 +39,9 @@
       "prettier --write",
       "eslint --fix",
       "git add"
+    ],
+    "*.css":[
+      "npx stylelint \"**/*.css\" --fix"
     ]
   }
 }

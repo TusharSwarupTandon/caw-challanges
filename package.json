@@ -44,7 +44,7 @@
       "eslint --fix"
     ],
     "*.css": [
-      "stylelint \"**/*.css\""
+      "stylelint \"**/*.css\" --fix"
     ]
   }
 }

@@ -41,7 +41,7 @@
       "git add"
     ],
     "**/*.css":[
-      "stylelint \"src/**/*.scss\" --fix"
+      "stylelint \"**/*.css\" --fix"
     ]
   }
 }

@@ -42,8 +42,8 @@
       "git add"
     ],
     "**/*.css": [
-      "stylelint \"**/*.css\" --fix",
-      "prettier --write"
+      "prettier --write",
+      "stylelint \"**/*.css\" --fix"
     ],
     "*.html":[
       "prettier --write"

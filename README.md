@@ -1,8 +1,8 @@
-# A master repo for all js practice challanges
+# A master repo for all js practice challeges
 
 [Link to challanges](https://tusharswaruptandon.github.io/caw-challanges/)
 
-## Challange 1 - Pomodoro timer
+## Challenge 1 - Pomodoro timer
 
 -   Toggle start/stop button on click.
 -   Do not allow user to access settings while timer is running.
@@ -11,7 +11,7 @@
 -   Change colour of ring to red and show alert on time complete.
 -   Allow only integer value between 59 and 0 while editing fields
 
-## Challange 2 - eCommerce Componenet
+## Challenge 2 - eCommerce Componenet
 
 -   Set click event on each add to cart button
 -   Display items in cart
@@ -21,16 +21,18 @@
 -   Change empty text
 -   Do not let items go in negative in cart
 
-## Challange 3 - Piano
+## Challenge 3 - Piano
 
 -   Make a function to create url links.
 -   Make a function to link all keys with there respective urls
 -   On clicking a key play sound.
 
-## Challange 4 - Jiggle Keyboard
+## Challenge 4 - Jiggle Keyboard
 
 -   Make a function to start key jiggle
 -   Make a function to stop key jiggle
 -   Generate random key to jiggle
 -   Verify correct key press for each user input
 -   Disable tab focus on keys
+
+## Challenge 5 - Multiple Checkbox

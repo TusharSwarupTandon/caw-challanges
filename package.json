@@ -40,7 +40,7 @@
       "eslint --fix",
       "git add"
     ],
-    "*.css":[
+    "**/*.css":[
       "npx stylelint \"**/*.css\" --fix"
     ]
   }

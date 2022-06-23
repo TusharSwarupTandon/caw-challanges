@@ -36,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,html,md}":[ 
+    "*.{js,css,html,md}":[ 
       "prettier --write",
       "git add"
     ],
@@ -44,7 +44,6 @@
       "eslint --fix"
     ],
     "*.css": [
-      "stylelint \"**/*.css\""
     ]
   }
 }

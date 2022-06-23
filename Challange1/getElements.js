@@ -5,7 +5,7 @@ const getMinuteTextField = () => {
     return minuteTextField;
 };
 
-// get access to seconds text field
+// get access to second's text field
 const getSecondTextField = () => {
     const secondDiv = document.querySelector('.seconds');
     const secondTextField = secondDiv.children[0];

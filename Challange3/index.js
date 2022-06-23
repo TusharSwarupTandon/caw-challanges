@@ -2,7 +2,7 @@
 // Output - function
 const playPianoSound = (url) => {
     // returns a function to mount to every key
-    return function() {
+    return () => {
         return new Audio(url).play();
     };
 };
@@ -27,7 +27,7 @@ const assignAudioFile = () => {
         // playPianoSound takes url as input which we get from makeUrl function
         // while passing index increment the value by 1 because
         // array has indexing from 0 and audio files are labeled from 1
-        anchorTags[i].addEventListener('click', playPianoSound(makeUrl(i+1)));
+        anchorTags[i].addEventListener('click', playPianoSound(makeUrl(i + 1)));
     }
 };
 

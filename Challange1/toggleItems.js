@@ -1,14 +1,14 @@
 import {
     isEditingTime,
     checkValidTime,
-    isTimerRunning
+    isTimerRunning,
 } from './booleanChecking.js';
 import {
     getMinuteTextField,
     getSecondTextField,
-    getRing
+    getRing,
 } from './getElements.js';
-import { startButton, timerDecreasing, reduceTimer } from './index.js';
+import {startButton, timerDecreasing, reduceTimer} from './index.js';
 
 const redColor = '#900A0A';
 const greenColor = '#09A65A';
@@ -114,5 +114,5 @@ export {
     toggleTimerText,
     setTimeEditDisabled,
     setTimeEditEnabled,
-    editTime
+    editTime,
 };

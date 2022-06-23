@@ -37,12 +37,16 @@
   },
   "lint-staged": {
     "*.js": [
-      "pretty-quick",
+      "prettier --write",
       "eslint --fix",
       "git add"
     ],
     "**/*.css": [
-      "stylelint \"**/*.css\" --fix"
+      "stylelint \"**/*.css\" --fix",
+      "prettier --write"
+    ],
+    "*.html":[
+      "prettier --write"
     ]
   }
 }

@@ -16,8 +16,8 @@ const timeUp = () => {
     clearInterval(timerDecreasing);
     changeRingColorToRed();
     toggleTimerText();
-    setTimeout(function() {
-        alert('Time\'s up.');
+    setTimeout(() => {
+        alert(`Time's up.`);
     }, 1);
 };
 
@@ -31,7 +31,8 @@ const reduceTimeEachSecond = () => {
         if (minutes > 0) {
             minutes--;
             seconds = '59';
-        } else { // minutes = 0 and seconds = 0
+        } else {
+            // minutes = 0 and seconds = 0
             timeUp();
         }
     } else {

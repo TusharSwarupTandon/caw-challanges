@@ -31,7 +31,7 @@ const decreaseQuantity = (button, index) => {
     plateQuantity.innerHTML = menuItems[index].count;
     qualityWrapperQuantity.innerHTML = menuItems[index].count;
     subtotal.innerHTML =
-    '$' + roundToTwoDecimalPlaces(calculateSubtotalPeritem(index));
+        '$' + roundToTwoDecimalPlaces(calculateSubtotalPeritem(index));
     updateTotals();
 };
 
@@ -52,7 +52,7 @@ const increaseQuantity = (button, index) => {
     subtotal.innerHTML =
         '$' +
         Math.round((calculateSubtotalPeritem(index) + Number.EPSILON) * 100) /
-        100;
+            100;
     updateTotals();
 };
 

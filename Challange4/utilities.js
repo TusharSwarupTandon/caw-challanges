@@ -20,9 +20,4 @@ const keyToBePressed = () => {
     return currentJigglingKey.getAttribute('data-key').toUpperCase();
 };
 
-export {
-    getNumberOfKeys,
-    generateRandomNumber,
-    selectRandomKey,
-    keyToBePressed,
-};
+export {getNumberOfKeys, generateRandomNumber, selectRandomKey, keyToBePressed};

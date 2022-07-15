@@ -57,8 +57,11 @@ const createContent = (index) => {
     content.classList.add('content');
 
     const menuItem = createElement('p', 'menu-item', menuItems[index].name);
-    const price =
-        createElement('p', 'price', '$' + menuItems[index].price / 100);
+    const price = createElement(
+        'p',
+        'price',
+        '$' + menuItems[index].price / 100,
+    );
 
     content.appendChild(menuItem);
     content.appendChild(price);
